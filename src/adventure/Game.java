@@ -165,11 +165,11 @@ public final class Game {
     private class ChoiceHandler implements ActionListener {
 
         public void actionPerformed(ActionEvent actionEvent) {
-            String yourChoice = actionEvent.getActionCommand();
+            String playerChoice = actionEvent.getActionCommand();
 
             switch (player.getPosition()) {
                 case "townGate":
-                    switch (yourChoice) {
+                    switch (playerChoice) {
                         case "c1":
                             if (silverRing) {
                                 finishedGame();
@@ -187,7 +187,7 @@ public final class Game {
                     break;
 
                 case "talkGuard":
-                    switch (yourChoice) {
+                    switch (playerChoice) {
                         case "c1":
                             townGate();
                             break;
@@ -195,7 +195,7 @@ public final class Game {
                     break;
 
                 case "attackGuard":
-                    switch (yourChoice) {
+                    switch (playerChoice) {
                         case "c1":
                             if (player.getHP() < 1) {
                                 death();
@@ -207,7 +207,7 @@ public final class Game {
                     break;
 
                 case "crossRoad":
-                    switch (yourChoice) {
+                    switch (playerChoice) {
                         case "c1":
                             north();
                             break;
@@ -224,7 +224,7 @@ public final class Game {
                     break;
 
                 case "north":
-                    switch (yourChoice) {
+                    switch (playerChoice) {
                         case "c1":
                             crossRoad();
                             break;
@@ -232,7 +232,7 @@ public final class Game {
                     break;
 
                 case "east":
-                    switch (yourChoice) {
+                    switch (playerChoice) {
                         case "c1":
                             crossRoad();
                             break;
@@ -241,7 +241,7 @@ public final class Game {
 
                 case "west":
                     if (goblinHP > 0) {
-                        switch (yourChoice) {
+                        switch (playerChoice) {
                             case "c1":
                                 fight();
                                 break;
@@ -250,7 +250,7 @@ public final class Game {
                                 break;
                         }
                     } else {
-                        switch (yourChoice) {
+                        switch (playerChoice) {
                             case "c1":
                                 crossRoad();
                                 break;
@@ -259,7 +259,7 @@ public final class Game {
                     break;
 
                 case "fight":
-                    switch (yourChoice) {
+                    switch (playerChoice) {
                         case "c1":
                             attackGoblin();
                             break;
@@ -270,7 +270,7 @@ public final class Game {
                     break;
 
                 case "attackGoblin":
-                    switch (yourChoice) {
+                    switch (playerChoice) {
                         case "c1":
                             if (goblinHP < 1) {
                                 killedGoblin();
@@ -282,7 +282,7 @@ public final class Game {
                     break;
 
                 case "goblinAttacks":
-                    switch (yourChoice) {
+                    switch (playerChoice) {
                         case "c1":
                             if (player.getHP() < 1) {
                                 death();
@@ -294,7 +294,7 @@ public final class Game {
                     break;
 
                 case "killedGoblin":
-                    switch (yourChoice) {
+                    switch (playerChoice) {
                         case "c1":
                             crossRoad();
                             break;
