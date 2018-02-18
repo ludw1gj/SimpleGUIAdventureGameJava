@@ -8,12 +8,14 @@ public final class GUI {
 
     private final ActionListener choiceHandler;
     private final ActionListener titleScreenHandler;
-    private final Font normalFont = new Font("Times New Roman", Font.PLAIN, 28);
+
     private Container container;
     private JPanel titleNamePanel, startButtonPanel;
     private JLabel currentHPLabel, currentWeaponLabel;
     private JTextArea mainTextArea;
     private JButton[] choiceButtons;
+
+    private final Font normalFont = new Font("Times New Roman", Font.PLAIN, 28);
 
     public GUI(ActionListener choiceHandler, ActionListener titleScreenHandler) {
         this.choiceHandler = choiceHandler;

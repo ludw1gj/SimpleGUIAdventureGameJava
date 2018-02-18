@@ -91,8 +91,13 @@ public final class Game {
     private void west() {
         player.movePosition("west");
 
-        gui.updateMainTextArea("You encounter a goblin!");
-        gui.updateChoiceButtons("Fight", "Run", "", "");
+        if (goblinHP > 0) {
+            gui.updateMainTextArea("You encounter a goblin!");
+            gui.updateChoiceButtons("Fight", "Run", "", "");
+        } else {
+            gui.updateMainTextArea("There is a dead goblin on the ground.");
+            gui.updateChoiceButtonsNoActions();
+        }
     }
 
     private void fight() {
@@ -235,13 +240,21 @@ public final class Game {
                     break;
 
                 case "west":
-                    switch (yourChoice) {
-                        case "c1":
-                            fight();
-                            break;
-                        case "c2":
-                            crossRoad();
-                            break;
+                    if (goblinHP > 0) {
+                        switch (yourChoice) {
+                            case "c1":
+                                fight();
+                                break;
+                            case "c2":
+                                crossRoad();
+                                break;
+                        }
+                    } else {
+                        switch (yourChoice) {
+                            case "c1":
+                                crossRoad();
+                                break;
+                        }
                     }
                     break;
 
