@@ -34,9 +34,7 @@ public final class Game {
                 case "townGate":
                     switch (choice) {
                         case "c1":
-                            if (world.playerHasSilverRing()) {
-                                world.finishGame();
-                            } else {
+                            if (!world.playerHasSilverRing()) {
                                 world.talkToGuard();
                             }
                             break;

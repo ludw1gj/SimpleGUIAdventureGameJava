@@ -31,7 +31,11 @@ public final class GameWorld {
     }
 
     public boolean playerHasSilverRing() {
-        return this.silverRing;
+        if (this.silverRing) {
+            gui.updateMainTextArea("Guard: Oh you killed that goblin?\nThank you so much. You are true hero!\nWelcome to our town!\n\n<THE END>");
+            gui.hideChoiceButtons();
+        }
+        return silverRing;
     }
 
     public boolean playerIsAlive() {
@@ -157,11 +161,6 @@ public final class GameWorld {
         gui.updateChoiceButtonsNoActions();
 
         updatePlayerHP(goblinDamage, true);
-    }
-
-    public void finishGame() {
-        gui.updateMainTextArea("Guard: Oh you killed that goblin?\nThank you so much. You are true hero!\nWelcome to our town!\n\n<THE END>");
-        gui.hideChoiceButtons();
     }
 
 }
