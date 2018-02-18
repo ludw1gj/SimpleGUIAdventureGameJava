@@ -1,12 +1,12 @@
 package adventure;
 
-public class GameWorld {
+public final class GameWorld {
+
+    private final GUI gui;
 
     private final Player player = new Player(15, "Knife");
     private boolean silverRing = false;
     private int goblinHP = 20;
-
-    private GUI gui;
 
     public GameWorld(GUI gui) {
         this.gui = gui;
