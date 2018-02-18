@@ -159,7 +159,6 @@ public class GameWorld {
         updatePlayerHP(goblinDamage, true);
     }
 
-
     public void finishGame() {
         gui.updateMainTextArea("Guard: Oh you killed that goblin?\nThank you so much. You are true hero!\nWelcome to our town!\n\n<THE END>");
         gui.hideChoiceButtons();
